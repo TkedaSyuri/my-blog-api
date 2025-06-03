@@ -9,4 +9,5 @@ resources :posts, only: [:index,:show,:create,:update,:destroy]
 
   # Defines the root path route ("/")
   # root "posts#index"
+  
 end

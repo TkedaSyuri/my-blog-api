@@ -20,6 +20,14 @@ test:
   <<: *default
   database: storage/test.sqlite3
 
+
+
 production:
-  <<: *default
-  database: storage/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: <%= ENV['SUPABASE_DB'] %>
+  username: <%= ENV['SUPABASE_USER'] %>
+  password: <%= ENV['SUPABASE_PASS'] %>
+  host: <%= ENV['SUPABASE_HOST'] %>
+  port: 5432
